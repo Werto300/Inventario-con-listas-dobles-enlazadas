@@ -8,17 +8,15 @@ namespace Inventario
 {
     class Inventario
     {
-        // TOTOS LOS MÉTODOS POSIBLES MENOS INSERTAR USAN RECURSIVIDAD
-
         public Producto primero { private set; get; }
 
-        public void agregar(Producto nuevo)
-        {
-            if (primero == null)
-                primero = nuevo;
-            else
-                agregar(nuevo, primero);
-        }
+        //public void agregar(Producto nuevo)
+        //{
+            //if (primero == null)
+                //primero = nuevo;
+            //else
+                //agregar(nuevo, primero);
+        //}
 
         private void agregar(Producto nuevo, Producto último)
         {
@@ -30,8 +28,7 @@ namespace Inventario
             else
                 agregar(nuevo, último.siguiente);
         }
-
-
+        
         public void agregarAlInicio(Producto nuevo)
         {
             if (primero == null)
