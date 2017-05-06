@@ -19,23 +19,23 @@ namespace Inventario
             InitializeComponent();
         }
 
-        //private void btnAgregarInicio_Click(object sender, EventArgs e)
-        //{
-            //inventario.agregarAlInicio(new Producto(Convert.ToInt32(txtCódigo.Text), txtNombre.Text, Convert.ToInt32(txtCantidad.Text), Convert.ToInt32(txtPrecio.Text)));
-            //MessageBox.Show("Producto agregado.");
-        //}
+        private void btnAgregarInicio_Click(object sender, EventArgs e)
+        {
+            Inven.agregarAlInicio(new Producto(Convert.ToInt32(txtCódigo.Text), txtNombre.Text, Convert.ToInt32(txtCantidad.Text), Convert.ToInt32(txtPrecio.Text)));
+            MessageBox.Show("Producto agregado.");
+        }
         
         private void btnAgregarFinal_Click(object sender, EventArgs e)
         {
-            inventario.agregar(new Producto(Convert.ToInt32(txtCódigo.Text), txtNombre.Text, Convert.ToInt32(txtCantidad.Text), Convert.ToInt32(txtPrecio.Text)));
+            Inven.agregar(new Producto(Convert.ToInt32(txtCódigo.Text), txtNombre.Text, Convert.ToInt32(txtCantidad.Text), Convert.ToInt32(txtPrecio.Text)));
             MessageBox.Show("Producto agregado.");
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            Inven.Agregar(Produc = new Producto(Convert.ToInt32(txtCodigoAg.Text),txtNombreAg.Text, 
-                Convert.ToInt32(txtCantidadAg.Text), Convert.ToInt32(txtPrecioAg.Text)));
-        }
+        //private void btnAgregar_Click(object sender, EventArgs e)
+        //{
+            //Inven.Agregar(Produc = new Producto(Convert.ToInt32(txtCodigoAg.Text),txtNombreAg.Text, 
+                //Convert.ToInt32(txtCantidadAg.Text), Convert.ToInt32(txtPrecioAg.Text)));
+        //}
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -44,7 +44,7 @@ namespace Inventario
 
         private void btnEliminarPrimero_Click(object sender, EventArgs e)
         {
-            if (inventario.eliminarPrimero())
+            if (Inven.eliminarPrimero())
                 MessageBox.Show("Producto eliminado.");
             else
                 MessageBox.Show("No se pudo eliminar el producto.");
@@ -52,7 +52,7 @@ namespace Inventario
 
         private void btnEliminarÚltimo_Click(object sender, EventArgs e)
         {
-            if (inventario.eliminarÚltimo())
+            if (Inven.eliminarÚltimo())
                 MessageBox.Show("Producto eliminado.");
             else
                 MessageBox.Show("No se pudo eliminar el producto.");
@@ -78,7 +78,7 @@ namespace Inventario
         private void btnReporteInverso_Click(object sender, EventArgs e)
         {
             txtReporte.Text = "Código" + "\t" + "Nombre" + "\t" + "Cantidad" + "\t" + "Costo" + Environment.NewLine;
-            txtReporte.Text += inventario.reporte(true);
+            txtReporte.Text += Inven.Reporte(true);
         }
 
         private void btnInsertar_Click(object sender, EventArgs e)
